@@ -69,7 +69,7 @@ type Upload struct {
 	Error            ErrorResp `json:"error,omitempty"`
 }
 
-// Upload image
+// Upload is uploading an image
 func (c *Cloudinary) Upload(file string, options Option) (*Upload, error) {
 	c.checkOptionsAreValid(options, uploadOptions)
 	options = c.sortParamsByKey(options)

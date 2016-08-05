@@ -14,7 +14,7 @@ import (
 
 var domain string = "https://api.cloudinary.com/v1_1/"
 
-// Main cloudinary struct
+// Cloudinary main struct
 type Cloudinary struct {
 	publicKey string
 	secretKey string
@@ -22,15 +22,15 @@ type Cloudinary struct {
 	urls      Option
 }
 
-// URL paramater custom type
+// Option is the optional parameters custom struct
 type Option map[string]string
 
-// Failed response
+// ErrorResp is the failed api request main struct
 type ErrorResp struct {
 	Message string `json:"message"`
 }
 
-// Create new cloudinary instance
+// Create is creating a new cloudinary instance
 func Create(public string, secret string, name string) *Cloudinary {
 	return &Cloudinary{
 		publicKey: public,
