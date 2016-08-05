@@ -1,4 +1,4 @@
-package cloudinary_go
+package cloudinary
 
 import (
 	"encoding/json"
@@ -49,6 +49,7 @@ var uploadOptions []string = []string{
 	"timestamp",
 }
 
+// Upload image success response struct
 type Upload struct {
 	PublicId         string    `json:"public_id"`
 	Version          int       `json:"version"`
@@ -68,6 +69,7 @@ type Upload struct {
 	Error            ErrorResp `json:"error,omitempty"`
 }
 
+// Upload image
 func (c *Cloudinary) Upload(file string, options Option) (*Upload, error) {
 	c.checkOptionsAreValid(options, uploadOptions)
 	options = c.sortParamsByKey(options)

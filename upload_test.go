@@ -1,4 +1,4 @@
-package cloudinary_go
+package cloudinary
 
 import (
 	"testing"

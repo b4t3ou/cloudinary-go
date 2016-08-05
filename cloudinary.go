@@ -1,4 +1,4 @@
-package cloudinary_go
+package cloudinary
 
 import (
 	"crypto/sha1"
@@ -14,6 +14,7 @@ import (
 
 var domain string = "https://api.cloudinary.com/v1_1/"
 
+// Main cloudinary struct
 type Cloudinary struct {
 	publicKey string
 	secretKey string
@@ -21,12 +22,15 @@ type Cloudinary struct {
 	urls      Option
 }
 
+// URL paramater custom type
+type Option map[string]string
+
+// Failed response
 type ErrorResp struct {
 	Message string `json:"message"`
 }
 
-type Option map[string]string
-
+// Create new cloudinary instance
 func Create(public string, secret string, name string) *Cloudinary {
 	return &Cloudinary{
 		publicKey: public,
